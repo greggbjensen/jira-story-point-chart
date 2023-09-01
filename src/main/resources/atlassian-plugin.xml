@@ -9,15 +9,36 @@
 
     <!-- add our i18n resource -->
     <resource type="i18n" name="i18n" location="story-point-chart"/>
+
+    <dashboard-item key="new-dashboard-item"
+            i18n-name-key="com.greggbjensen.plugins.charts.dashboard.item.title">
+        <definition>
+            <title key="com.greggbjensen.plugins.charts.dashboard.item.title"/>
+            <categories>
+                <category>Charts</category>
+            </categories>
+            <author>
+                <name>Gregg B. Jensen</name>
+            </author>
+            <thumbnail location="/download/resources/${atlassian.plugin.key}:story-point-chart-resources/images/pluginLogo.png"/>
+        </definition>
+        <description key="com.greggbjensen.plugins.charts.dashboard.item.description"/>
+        <resource name="view" type="soy" location=":story-point-chart-resources/Dashboard.Item.Tutorial.Templates.Static"/>
+        <context-provider class="com.greggbjensen.plugins.charts.DashboardItemContextProvider"/>
+    </dashboard-item>
     
     <!-- add our web resources -->
     <web-resource key="story-point-chart-resources" name="story-point-chart Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
+        <transformation extension="soy">
+            <transformer key="soyTransformer"/>
+        </transformation>
         <resource type="download" name="story-point-chart.css" location="/css/story-point-chart.css"/>
         <resource type="download" name="story-point-chart.js" location="/js/story-point-chart.js"/>
         <resource type="download" name="images/" location="/images"/>
-
+        <resource type="download" location="soy/dashboard-item.soy" name="soy/dashboard-item.soy.js"/>
+        <resource type="soy" location="/soy/dashboard-item.soy" name="Dashboard.Item.Tutorial.Templates.Static"/>
+        <context>atl.dashboard</context>
         <context>story-point-chart</context>
     </web-resource>
     

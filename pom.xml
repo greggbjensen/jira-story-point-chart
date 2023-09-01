@@ -10,12 +10,12 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <organization>
-        <name>Example Company</name>
-        <url>http://www.example.com/</url>
+        <name>Gregg B. Jensen</name>
+        <url>greggbjensen.com</url>
     </organization>
 
     <name>story-point-chart</name>
-    <description>This is the com.greggbjensen.plugins.charts:story-point-chart plugin for Atlassian JIRA.</description>
+    <description>Jira dashboard item that displays a chart for story point calculations.</description>
     <packaging>atlassian-plugin</packaging>
 
     <dependencies>
@@ -150,10 +150,10 @@
     </build>
 
     <properties>
-        <jira.version>7.13.0</jira.version>
-        <amps.version>8.1.2</amps.version>
+        <jira.version>9.11.0</jira.version>
+        <amps.version>8.9.2</amps.version>
         <plugin.testrunner.version>2.0.2</plugin.testrunner.version>
-        <atlassian.spring.scanner.version>2.1.7</atlassian.spring.scanner.version>
+        <atlassian.spring.scanner.version>3.0.3</atlassian.spring.scanner.version>
         <!-- This property ensures consistency between the key in atlassian-plugin.xml and the OSGi bundle's key. -->
         <atlassian.plugin.key>${project.groupId}.${project.artifactId}</atlassian.plugin.key>
         <!-- TestKit version 6.x for JIRA 6.x -->
